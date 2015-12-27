@@ -12,7 +12,11 @@ blog.config(['$routeProvider',
                 templateUrl: 'partials/frontPage.html',
                 controller: 'FrontPageController'
             }).
-          otherwise({
-            redirectTo: '/'
-          });
+            when('/post/:postId', {
+                templateUrl: 'partials/post.html',
+                controller: 'PostController'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
   }]);
