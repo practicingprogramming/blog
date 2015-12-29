@@ -1,5 +1,7 @@
-<h3 class="post-title">{{post.title}}</h3>
-
+<div class="post-header">
+  <h3>{{post.title}}</h3>
+  <p class="post-date">Published on: {{timestampToDate(post.timestamp)}}</p>
+</div>
 <div class="well">
   <ng-include src="partial"></ng-include>
 </div>
