@@ -7,6 +7,9 @@ angular
         },
         'testPost2': {
             title: 'This is the second post'
+        },
+        'creatingThisBlog': {
+            title: 'Creating This Blog'
         }
     };
     return {
