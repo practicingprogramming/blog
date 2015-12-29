@@ -5,7 +5,6 @@ blogControllers.controller('PostController', ['$scope', '$routeParams', 'postSer
         var postId = $routeParams.postId;
 
         $scope.post = postService.getPost(postId); // TODO: handle post not found
-        $scope.partial = '/partials/posts/' + postId + '.html';
 
         $scope.timestampToDate = function(timestamp) {
             var a = new Date(timestamp * 1000);

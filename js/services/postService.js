@@ -4,20 +4,26 @@ angular
     var posts = {
         'testPost1': {
             title: 'This is the first post',
-            timestamp: 1451369142
+            timestamp: 11111,
+            partial: '/partials/posts/testPost1.html'
         },
         'testPost2': {
             title: 'This is the second post',
-            timestamp: 1251360142
+            timestamp: 33333,
+            partial: '/partials/posts/testPost2.html'
         },
         'creatingThisBlog': {
             title: 'Creating This Blog',
-            timestamp: 1451269142
+            timestamp: 22222,
+            partial: '/partials/posts/creatingThisBlog.html'
         }
     };
     return {
         getPost: function(id) {
             return posts[id];
+        },
+        getAllPosts: function() {
+            return posts;
         }
     };
 });

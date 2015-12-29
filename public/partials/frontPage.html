@@ -1,6 +1,3 @@
-<p>
-  Front page partial.
-</p>
-<p>
-  Controller value: {{contValue}}
-</p>
+<div ng-repeat='post in postsArray'>
+  <ng-include src="'/partials/post.html'"></ng-include>
+</div>
