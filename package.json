@@ -5,5 +5,11 @@
   "main": "server.js",
   "dependencies": {
     "express": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-shell": "*"
   }
 }
