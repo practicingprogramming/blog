@@ -25,14 +25,25 @@ module.exports = function(grunt) {
                 src: 'js/**',
                 dest: 'build/practicingprogramming.js',
             }
+        },
+        uglify: {
+            options: {
+                compress: true,
+                mangle: true
+            },
+            target: {
+                src: 'build/practicingprogramming.js',
+                dest: 'build/practicingprogramming.js'
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-shell');
-    grunt.registerTask('build', ['clean', 'concat', 'copy']);
+    grunt.registerTask('build', ['clean', 'concat', 'uglify', 'copy']);
     grunt.registerTask('release', ['build', 'shell']);
     grunt.registerTask('default', ['build']);
 };
