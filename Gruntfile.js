@@ -33,5 +33,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-shell');
-    grunt.registerTask('default', ['clean', 'concat', 'copy', 'shell']);
+    grunt.registerTask('build', ['clean', 'concat', 'copy']);
+    grunt.registerTask('release', ['build', 'shell']);
+    grunt.registerTask('default', ['build']);
 };
