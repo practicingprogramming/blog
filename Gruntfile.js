@@ -6,7 +6,6 @@ module.exports = function(grunt) {
           main: {
             files: [
               {expand: true, src: '**', dest: 'build/', cwd: 'public/'},
-              {expand: true, src: '**', dest: 'build/', cwd: 'js/'},
               {expand: true, src: '**', dest: 'build/', cwd: 'css/'}
             ],
           },
