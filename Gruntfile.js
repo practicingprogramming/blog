@@ -17,11 +17,21 @@ module.exports = function(grunt) {
                     return 'aws s3 sync build s3://practicingprogramming.com/';
                 }
             }
+        },
+        concat: {
+            options: {
+                separator: '\n;',
+            },
+            dist: {
+                src: 'js/**',
+                dest: 'build/practicingprogramming.js',
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-shell');
-    grunt.registerTask('default', ['clean', 'copy', 'shell']);
+    grunt.registerTask('default', ['clean', 'concat', 'copy', 'shell']);
 };

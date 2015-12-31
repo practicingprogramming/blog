@@ -10,6 +10,7 @@
     "grunt": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
     "grunt-shell": "*"
   }
 }
