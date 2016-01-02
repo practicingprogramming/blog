@@ -11,14 +11,5 @@ blogControllers.controller('FrontPageController', ['$scope', 'postService',
         $scope.postsArray = postKeys.map(function(key) {
             return $scope.posts[key];
         });
-
-        // TODO: duplicated with postController
-        $scope.timestampToDate = function(timestamp) {
-            var a = new Date(timestamp * 1000);
-            var year = a.getFullYear();
-            var month = a.getMonth() + 1;
-            var date = a.getDate();
-            return year + '/' + month + '/' + date;
-        };
     }
 ]);
