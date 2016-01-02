@@ -6,7 +6,7 @@ angular
     var posts = {
         'creatingThisBlog': {
             title: 'Creating This Blog',
-            timestamp: 22222,
+            timestamp: 1451763849,
             partial: '/partials/posts/creatingThisBlog.html',
             id: 'creatingThisBlog'
         }
