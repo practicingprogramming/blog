@@ -2,16 +2,15 @@
   The first post is, naturally, about  creating this website.
 </p>
 <p>
-  There are a lot of blogging platforms out there, but writing things by myself is the very purpose of this blog. So, I decided to make my own blogging platform from scratch.
-</p>
-<p>
-  I decided to start by making it work first, and then making it better/more generic/whatever maybe later. I also decided not to research how other blogs work but to design it by myself.
+  There are a lot of blogging platforms out there, but writing things by myself is the very purpose of this blog.
+  So, I decided to make my own blogging platform from scratch.
+  It doesn't have to be a real platform though: it should just work for this particular website.
 </p>
 
 <p>
-  So, these are the minimal requirements:
+  These are the minimal requirements:
   <ul>
-    <li>Must be able to host static articles</li>
+    <li>Must be able to host static articles.</li>
     <li>Must be able to show those static articles in a feed.</li>
     <li>Must have "About" page.</li>
   </ul>
@@ -20,21 +19,73 @@
 <p>
   Desired but not necessary for launch:
   <ul>
-    <li>Ability to leave comments</li>
-    <li>Convenient publishing of new material</li>
+    <li>Ability to leave comments.</li>
+    <li>Convenient publishing of new material.</li>
+    <li>Analytics.</li>
   </ul>
 </p>
 
 <p>
-  So, to satisfy the minimal requirements it’s enough for it to be completely static (HTML + JS + CSS, no backend). All I need to do is to write a bunch of HTML and host it somewhere. I chose to host in on AWS S3 as it looks like a good option, plus I'm quite familiar with it. Researching totally new technologies is out of scope of this particular project.
-  It is explained in much detail in http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html
+  To satisfy the minimal requirements it’s enough for it to be completely static (HTML + JS + CSS, no backend).
+  All I need to do is to write a bunch of HTML and host it somewhere.
+  I chose to host in on AWS S3 as it looks like a good option, plus I'm quite familiar with it.
 </p>
 
 <p>
-  Background:
+  Technologies I chose to use:
   <ul>
-    <li>I'm quite familiar with many AWS S3 and CloudFormation, but not CloudFront or Route53.</li>
-    <li>OK with HTML, JS and CSS.</li>
-    <li>Some experience with Angular.</li>
+    <li>AWS S3 + Route53 for hosting.</li>
+    <li>node + expressjs for running it locally.</li>
+    <li>Grunt for building.</li>
+    <li>Bootstrap for styling.</li>
+    <li>Angular.</li>
+  </ul>
+</p>
+<p>
+  Overall, it was pretty straightforward.
+  Hosting a website on S3 is described in much details <a href="http://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html">here</a>.
+  The only thing that required some coding effort was displaying all posts at once on the front page.
+  But that wasn't difficult either.
+</p>
+
+<p>
+  Things I've learned:
+  <ul>
+    <li>How to host a website on S3.</li>
+    <li>How to register a domain and point it at the website with Route53.</li>
+    <li>
+      How to setup Angular and Grunt.
+      I've participated in projects using them, but had never done the initial setup myself before.
+    </li>
+  </ul>
+</p>
+
+<p>
+  What I should do in the future:
+  <ul>
+    <li>
+      Add unit tests.
+      Usually I'm all for test-driven development.
+      But in this case I have probably 10 lines of code, so I decided it was not even worth bothering.
+    </li>
+    <li>
+      Add some sort of analytics.
+      Perhaps I should use one of the services analyzing S3 access logs.
+      It's a little strange that S3 itself does not provide this functionality.
+    </li>
+    <li>
+      Enable SSL.
+      Not a big deal at the moment because it's static, so there are no interactions to secure.
+    </li>
+    <li>
+      Use CloudFront for distribution.
+    </li>
+  </ul>
+</p>
+
+<p>
+  Conclusions:
+  <ul>
+    <li>AWS is a great option for hosting static websites.</li>
   </ul>
 </p>
