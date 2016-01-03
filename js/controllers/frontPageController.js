@@ -1,7 +1,9 @@
 var blogControllers = angular.module('blogControllers');
 
-blogControllers.controller('FrontPageController', ['$scope', 'postService',
-    function ($scope, postService) {
+blogControllers.controller('FrontPageController', ['$scope', '$window', 'postService',
+    function ($scope, $window, postService) {
+        $window.document.title = 'Practicing Programming';
+
         $scope.posts = postService.getAllPosts();
 
         var postKeys = Object.keys($scope.posts).sort(function(a,b) {

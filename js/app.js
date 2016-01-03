@@ -17,7 +17,8 @@ blog.config(['$routeProvider',
                 controller: 'PostController'
             }).
             when('/about', {
-                templateUrl: 'partials/about.html'
+                templateUrl: 'partials/about.html',
+                controller: 'AboutController'
             }).
             otherwise({
                 redirectTo: '/'
