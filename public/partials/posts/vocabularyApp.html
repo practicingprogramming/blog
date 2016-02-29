@@ -1,0 +1,99 @@
+<p>
+  Object-oriented design is something every professional software developer should be good at,
+  but I find this skill difficult to improve.
+  Despite writing lots of code at work, I rarely have an opportunity to practice my OOD.
+  I blame the frameworks we use: they are too good and do all the object-oriented design for me.
+  I could not find a lot of OOD exercises on the Internet either: they usually are either too simple,
+  or too open ended, or too unrealistic.
+</p>
+
+<p>
+  Because of this, in order to improve my OOD skills, I decided to design my own exercises.
+  They should:
+  <ul>
+    <li>Be realistic, describing a real world issue.</li>
+    <li>Simple enough so I can implement them within a few hours.</li>
+    <li>Have few or better no external dependencies.</li>
+    <li>Ideally, but not necessarily, allow a good usage of a common design pattern.</li>
+  </ul>
+</p>
+
+<h3>Vocabulary App</h3>
+<p>
+  The first exercise I designed is a simple command-line application
+  for memorizing new words called "Vocabulary".
+</p>
+
+<p>
+  The app should:
+  <ul>
+    <li>Read words and their definitions from a file.</li>
+    <li>Choose what word to ask based on a strategy passed as an argument.</li>
+    <li>Ask the user to guess the word by its definition.</li>
+    <li>Tell if the answer is correct.</li>
+    <li>Record the question and the answer to a log.</li>
+  </ul>
+</p>
+
+<p>
+    Example:
+    <br>
+    <i>Question: Woman</i>
+    <br>
+    Hombre
+    <br>
+    <i>Incorrect! Correct answer: Mujer.</i>
+    <br>
+  </i>
+</p>
+
+<p>
+  Assume that each question has exactly one correct answer.
+</p>
+
+<p>
+  The app should support different modes/strategies for selecting which questions to ask.
+  Possible strategies include:
+  <ul>
+    <li>Random - ask a random word from the dictionary.</li>
+    <li>Ask the least frequently asked word.</li>
+    <li>Ask the word with the worst correct answer rate.</li>
+  </ul>
+  However, we want the app to be extensible and adding new strategies simple.
+  Current strategy is passed as a command line argument.
+</p>
+
+<h4>My Design</h4>
+<p>
+  <img src="images/vocabulary-class-diagram.png"/>
+  <ul>
+    <li>
+      I tried to isolate user interactions (QuizRunner)
+      from persistence (Dictionary and AnswerLog) and from everything else.
+    </li>
+    <li>
+      Strategies are implemented using, unsurprisingly, <i>Strategy</i> design pattern.
+    </li>
+    <li>
+      I don't know what sort of strategies I may need in the future,
+      but it's unlikely that they will depend on anything other than Dictionary and AnswerLog.
+    </li>
+  </ul>
+
+</p>
+
+<h4>Implementation</h4>
+<p>
+  I chose to write this in Ruby. The source code of my implementation is
+  <a href="https://github.com/practicingprogramming/vocabulary">on Github</a>.
+  I'm still working on it at the moment.
+  In the future, I'm going to use it for practicing testing applications with Cucumber.
+</p>
+
+<h4>Final Notes</h4>
+<p>
+  I used <a href="https://www.draw.io/">draw.io</a> for drawing the class diagram.
+  It turns out that drawing diagrams is much simpler on a piece of paper or on a whiteboard.
+  I can't say I'm totally satisfied with the tool.
+  Next time I'll try something different.
+</p>

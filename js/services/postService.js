@@ -9,6 +9,12 @@ angular
             timestamp: 1451763849,
             partial: '/partials/posts/creatingThisBlog.html',
             id: 'creatingThisBlog'
+        },
+        'vocabularyApp': {
+            title: 'Practicing Object-Oriented Design: Application For Memorizing Words',
+            timestamp: 1453600990,
+            partial: '/partials/posts/vocabularyApp.html',
+            id: 'vocabularyApp'
         }
     };
     return {
