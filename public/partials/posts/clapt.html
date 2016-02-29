@@ -1,0 +1,74 @@
+<p>
+  Recently I have finished reading
+  <a href="http://www.amazon.com/Design-Patterns-Ruby-Russ-Olsen/dp/0321490452">
+    Design Patterns in Ruby
+  </a>.
+  The chapter I found most useful was about internal DSLs.
+  Ruby seems like a perfect language for this pattern.
+  I decided to write something using it.
+</p>
+
+<h3>Clapt</h3>
+<p>
+  As an exercise I chose to write an app that will test interactive command line applications.
+  I named it Clapt - <b>C</b>ommand <b>L</b>ine <b>AP</b>plication <b>T</b>ester.
+  Clapt discovers and executes tests on the given directory.
+</p>
+
+<p>
+  A test file is a file with a name ending with "_clapt.rb".
+</p>
+
+<p>
+  A test looks like this:
+  <pre>
+    <code>
+Clapt::Test.new 'test name' do |t|
+  t.start('grep string')
+  t.input 'string'
+  t.output /string/ # fail if command output does not match the string.
+  t.input 'should not match'
+  t.output /^$/
+  t.terminate 0 # fail if exit code doesn't match.
+end</code>
+  </pre>
+</p>
+
+<p>
+  Usage: <i>clapt &lt;DIRECTORY&gt;</i>
+</p>
+
+<h4>Design</h4>
+<p>
+  <img src="images/clapt-class-diagram.png"/>
+  <ul>
+    <li>
+      In order to decouple test execution from outputting its result,
+      I made ResultWriter an Observer. The Observable is TestSuiteRunResult.
+    </li>
+    <li>
+      TestRegistry is a Singleton. I'm not a fan of this pattern,
+      but I found no better option: the tests need to register themselves,
+      and they have to know where to register somehow.
+      So, there must be some sort of global instance.
+    </li>
+  </ul>
+
+</p>
+
+<h4>Implementation</h4>
+<p>
+  The source code of my implementation is
+  <a href="https://github.com/practicingprogramming/clapt">on Github</a>.
+  I lost interest in it once I got something working,
+  so there's nothing particularly good in there.
+</p>
+
+<p>
+  Communication with an interactive command-line application from ruby
+  turned out to be way more tedious than I thought.
+</p>
+
+<p>
+  It must be fun to dig into source code of testing frameworks like RSpec.
+</p>

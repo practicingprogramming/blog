@@ -15,6 +15,12 @@ angular
             timestamp: 1453600990,
             partial: '/partials/posts/vocabularyApp.html',
             id: 'vocabularyApp'
+        },
+        'clapt': {
+            title: 'Application for Testing Command Line Applications',
+            timestamp: 1456711197,
+            partial: '/partials/posts/clapt.html',
+            id: 'clapt'
         }
     };
     return {
