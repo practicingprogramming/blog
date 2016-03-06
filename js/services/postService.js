@@ -21,6 +21,12 @@ angular
             timestamp: 1456711197,
             partial: '/partials/posts/clapt.html',
             id: 'clapt'
+        },
+        'cucumberAndCapybara': {
+            title: 'Cucumber and Capybara',
+            timestamp: 1457244800,
+            partial: '/partials/posts/cucumberAndCapybara.html',
+            id: 'cucumberAndCapybara'
         }
     };
     return {
