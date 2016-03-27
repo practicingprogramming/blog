@@ -27,6 +27,12 @@ angular
             timestamp: 1457244800,
             partial: '/partials/posts/cucumberAndCapybara.html',
             id: 'cucumberAndCapybara'
+        },
+        'bashOneLiners': {
+            title: 'Bash One-Liners',
+            timestamp: 1459108585,
+            partial: '/partials/posts/bashOneLiners.html',
+            id: 'bashOneLiners'
         }
     };
     return {
