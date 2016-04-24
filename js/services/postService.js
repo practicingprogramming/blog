@@ -33,6 +33,12 @@ angular
             timestamp: 1459108585,
             partial: '/partials/posts/bashOneLiners.html',
             id: 'bashOneLiners'
+        },
+        'python': {
+            title: 'Python',
+            timestamp: 1461462814,
+            partial: '/partials/posts/python.html',
+            id: 'python'
         }
     };
     return {
